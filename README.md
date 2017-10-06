@@ -1,6 +1,6 @@
-# BT-TMDT-1 - *Pix-Mes*
+# BT-TMDT-1 - *CubeBlog*
 
-**Pix-Mes** là một bài tập môn TMDT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
+**CubeBlog** là một bài tập môn TMDT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
 
 Thành viên:
 * [x] **1312359** Đào Chí Minh (1312359)
