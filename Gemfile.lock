@@ -49,6 +49,8 @@ GEM
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
     bindex (0.5.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap (4.0.0.beta)
       autoprefixer-rails (>= 6.0.3)
       popper_js (~> 1.11.1)
@@ -74,6 +76,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.2)
+    debug_inspector (0.0.3)
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -198,7 +201,8 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   better_errors
-  bootstrap
+  binding_of_caller
+  bootstrap (~> 4.0.0.beta)
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
@@ -219,4 +223,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.3
+   1.16.0.pre.3
