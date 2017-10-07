@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:session][:username].downcase)
     if user && user.authenticate(params[:session][:password])
-      session[:username] = user.id
-      cookies.signed[:username] = user.id
+      session[:user_id] = user.id
+      cookies.signed[:user_id] = user.id
       flash[:success] = "You have successfully logged in"
-      redirect_to user
+      redirect_to root_path
     else
       flash.now[:danger] = "There was something wrong with your login information"
       #redirect_back(fallback_location: root_path)
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    session[:username] = nil
+    session[:user_id] = nil
     flash[:success] = "You have logged out"
     redirect_to root_path
   end

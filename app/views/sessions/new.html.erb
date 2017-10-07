@@ -1,5 +1,6 @@
-<div class="mt-5 container">
-    <h1 class="center">Login page</h1>
+<%= render 'shared/page_title', title: "Login page" %>
+
+<div class="container">
     <div class="row justify-content-md-center">
       <div class="col-4">
         <%= form_for :session do |f|%>
@@ -13,9 +14,7 @@
             <%= f.password_field :password, class: "form-control" %>
           </div>
           
-          <div class="btn btn-primary">
-            <%= f.submit "Login", class: "btn btn-primary" %>
-          </div>
+          <%= f.submit "Login", class: "btn btn-lg btn-primary" %>
         <% end %>
       </div>
     </div>

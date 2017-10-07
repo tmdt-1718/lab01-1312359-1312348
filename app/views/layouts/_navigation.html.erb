@@ -20,8 +20,12 @@
           <li class="nav-item">
             <a href="blog.html" class="nav-link">Blog </a>
           </li>
-          <li class="nav-item">
-            <%= link_to "Login", login_path, class: "btn btn-primary" %>
+          <li class="nav-item ml-3">
+            <% if !logged_in? %>
+              <%= link_to "Login", login_path, class: "btn btn-md btn-success" %>
+            <% else %>
+              <%= link_to "Logout", logout_path, class: "btn btn-md btn-secondary" %>
+            <% end %>
           </li>
         </ul>
       </div>
