@@ -1,7 +1,9 @@
 <div class="jumbotron center">
   <h1>Welcome to CubeBlog</h1>
   <h2>The best blog app!</h2>
-  <p><%= link_to "Sign up for the app", root_path, class: "btn btn-danger btn-lg btn-xlarge" %></p>
+  <% if !logged_in? %>
+    <p><%= link_to "Sign up for the app", signup_path, class: "btn btn-danger btn-lg btn-xlarge" %></p>
+  <% end %>
 </div>
 
 <div class="row">
