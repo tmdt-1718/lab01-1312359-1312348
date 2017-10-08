@@ -25,6 +25,9 @@
               <%= link_to "Login", login_path, class: "btn btn-md btn-success" %>
             <% else %>
               <%= link_to "Logout", logout_path, class: "btn btn-md btn-secondary" %>
+              <li class="nav-item ml-3">
+                <%= link_to "Profile", edit_user_path(current_user), class: "btn btn-md btn-info" %>
+              </li>
             <% end %>
           </li>
         </ul>
