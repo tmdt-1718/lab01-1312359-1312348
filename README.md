@@ -4,7 +4,7 @@
 
 Thành viên:
 * [x] **1312359** Đào Chí Minh (1312359)
-* [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
+* [x] **1312348** Lư Hán Luân (1312348)
 
 URL: **https://ec17-lab1.herokuapp.com/**
 
