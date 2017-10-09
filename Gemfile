@@ -35,7 +35,9 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
-gem 'fog'
+gem "fog-google"
+gem "google-api-client", "> 0.8.5", "< 0.9"
+gem "mime-types"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
