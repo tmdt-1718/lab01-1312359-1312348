@@ -10,7 +10,9 @@
 <% @blogs.each do |i| %>
   <div class="card m-auto" style="width: 50rem;">
     <%= link_to user_blog_path(i.user, i) do %>
-      <%= image_tag (i.image.url if i.image?), class: "card-img-top" %>
+      <% if i.image != nil %>
+        <%= image_tag (i.image.url), class: "card-img-top" %>
+      <% end %>
     <% end %>
     <div class="card-body">
       <%= link_to i.title, user_blog_path(i.user, i), class: "card-title" %>

@@ -10,7 +10,7 @@
 <% @albums.each do |i| %>
   <div class="card m-auto" style="width: 50rem;">
     <%= link_to user_album_path(i.user, i) do %>
-      <%= image_tag (i.images[0].url if i.images?), class: "card-img-top" %>
+      <%= image_tag (i.images[0].url if i.images.any?), class: "card-img-top" %>
     <% end %>
     <div class="card-body">
       <%= link_to i.title, user_album_path(i.user, i), class: "card-title" %>
