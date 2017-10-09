@@ -1,4 +1,5 @@
 class Album < ApplicationRecord
-  attribute :images, ArrayType.new
+  attr_accessor :images
   mount_uploaders :images, ImageUploader
+  belongs_to :user
 end

@@ -1,0 +1,16 @@
+<%= render 'shared/page_title', title: 'Album ' + @album.title %>
+
+<h3 class="center"><%= "Description: " + @album.description%> </h1>
+
+<hr></hr>
+
+
+<div class="col">
+  <% if @album.images.any? %>
+    <% @album.images.each do |i|%>
+    <div class="row justify-content-md-center">
+      <%= image_tag i.url %>
+    </div>
+    <% end %>
+  <% end %>
+</div>

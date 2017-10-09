@@ -3,7 +3,7 @@ class CreateAlbums < ActiveRecord::Migration[5.1]
     create_table :albums do |t|
       t.string :title
       t.string :description
-      t.text :images
+      t.text :images, array: true, default: []
 
       t.timestamps
     end

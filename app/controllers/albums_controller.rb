@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /albums
   # GET /albums.json
@@ -25,7 +26,7 @@ class AlbumsController < ApplicationController
   # POST /albums.json
   def create
     @album = Album.new(album_params)
-    @album.user_id = params[:user_id]
+    @album.user = current_user
     if @album.save!
       flash[:success] = "Album was successfully created"
     else
@@ -54,6 +55,14 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:title, :description, images: [])
+      params.require(:album).permit(:title, :description, {images: []})
+    end
+    
+    # User only perfome action to own albums
+    def require_same_user
+      if current_chef != @album.user and !current_chef.admin?
+        flash[:danger] = "You can only edit or delete your own albums"
+        redirect_to recipes_path
+      end  
     end
 end

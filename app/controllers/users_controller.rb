@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       flash[:success] = "Your account was updated successfully"
       redirect_back(fallback_location: root_path)
     else
-      flash[:success] = "Something go wrong, update failed"
+      flash[:danger] = "Something go wrong, update failed"
       redirect_back(fallback_location: root_path)
     end  
   end

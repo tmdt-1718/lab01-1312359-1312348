@@ -1,32 +1,37 @@
-<%= form_for [:user, @album], :html => { multipart: true} do |form| %>
-  <% if @album.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
-
-      <ul>
-      <% album.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-4">
+      <%= form_for [:user, @album], :html => { multipart: true} do |form| %>
+        <% if @album.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
+      
+            <ul>
+            <% album.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      
+        <div class="form-group">
+          <%= form.label :title %>
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
+      
+        <div class="form-group">
+          <%= form.label :description %>
+          <%= form.text_field :description, class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= form.label :images %>
+          <%= form.file_field :images , multiple: true, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
+        </div>
+      
+        <%= form.submit "Create", class: "btn btn-lg btn-primary" %>
+      
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :album_title %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :album_description %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :images %>
-    <%= form.file_field :images , multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

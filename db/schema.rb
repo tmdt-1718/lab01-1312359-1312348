@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20171009071545) do
   create_table "albums", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.text "images"
+    t.text "images", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

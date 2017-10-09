@@ -1,0 +1,17 @@
+<%= render 'shared/page_title', title: "All albums by all user" %>
+
+<% if logged_in? %>
+  <%= link_to "Create an album", new_user_album_path(current_user), class: "btn btn-primary m-2 p-3" %>
+  <hr></hr>
+<% end %>
+
+<% @albums.each do |i| %>
+  <div class="card m-auto" style="width: 50rem;">
+    <%= image_tag (i.images[0].url if i.images?), class: "card-img-top", alt: "Card image cap" %>
+    <div class="card-body">
+      <%= link_to i.title, user_album_path(i.user, i), class: "card-title" %>
+      <p class="card-text"><%= truncate(i.description, length: 50) %></p>
+    </div>
+  </div>
+<% end %>
+

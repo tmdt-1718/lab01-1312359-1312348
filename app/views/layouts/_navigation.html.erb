@@ -15,10 +15,10 @@
             <a href="about.html" class="nav-link">About Us </a>
           </li>
           <li class="nav-item">
-            <a href="services.html" class="nav-link">Albums </a>
+            <%= link_to "Albums", albums_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <a href="blog.html" class="nav-link">Blog </a>
+            <%= link_to "Blogs", blogs_path, class: "nav-link" %>
           </li>
           <li class="nav-item ml-3">
             <% if !logged_in? %>
