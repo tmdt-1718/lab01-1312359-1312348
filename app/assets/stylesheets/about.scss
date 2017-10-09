@@ -1,0 +1,48 @@
+body{ background-image: image-url('cover-about.jpeg'); }
+
+.middle{
+    text-align: center;
+    text-size: 21px;
+    color: red;
+    font-weight: bold;
+}
+
+
+.container {
+    position: relative;
+    width: 80%;
+}
+
+.left {
+    float: left;
+    width: 38.5%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+.right {
+    float: right;
+    width: 38.5%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+.imageabout {
+    width: 400px;
+    height: 300px;
+    text-align: center;
+}
+
+.text-header-about {
+    color: #f48c42;
+    text-size: 17px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.text-about {
+    color: #e40eef;
+    text-size: 17px;
+    text-align: left;
+    margin-left: 20px;
+}
