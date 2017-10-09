@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'signup' => 'users#new'
   get 'about' => 'pages#about'
+  get 'albums' => 'pages#albums'
   resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
