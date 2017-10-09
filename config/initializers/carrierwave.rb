@@ -5,5 +5,5 @@ CarrierWave.configure do |config|
     google_storage_access_key_id:     'GOOGTD54C3757EZOFQCQ',
     google_storage_secret_access_key: 'PYl1WhMciGmyrVyp8p52+8at9fppZ5YeyHVHc4KK'
   }
-  config.fog_directory = 'CubeBlog'
+  config.fog_directory = 'cubeblogminhminh'
 end
