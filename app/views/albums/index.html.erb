@@ -11,7 +11,7 @@
   <div class="card m-auto" style="width: 50rem;">
     <%= link_to user_album_path(i.user, i) do %>
       <% if i.images != nil %>
-        <%= image_tag (i.image.url), class: "card-img-top" %>
+        <%= image_tag (i.images[0].url), class: "card-img-top" %>
       <% end %>
     <% end %>
     <div class="card-body">
