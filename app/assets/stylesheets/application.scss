@@ -30,3 +30,41 @@ body {
   letter-spacing: -1px;
   font-weight: bold;
 }
+
+
+$footer-header-height: 102px;
+$footer-body-height: 50px;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-repeat: repeat-x;
+  margin-bottom: $footer-header-height + $footer-body-height;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      display: inline;
+      margin-right: 1em;
+    }
+  }
+}
+
+footer.header {
+  bottom: $footer-body-height;
+  background: image-url( "footer.jpg" ) repeat-x;
+  height: $footer-header-height;
+}
+footer.body {
+  background: image-url( "footer.jpg") repeat;
+  min-height: $footer-body-height;
+}
