@@ -1,0 +1,9 @@
+<%= render 'shared/page_title', title: 'Album ' + @blog.title %>
+
+<div class="row justify-content-md-center">
+  <%= image_tag @blog.image.url if @blog.image? %>
+</div>
+<hr></hr>
+<p><%=@blog.content%> </p>
+<hr></hr>
+<h4 class="center"><%= "Created by: " + @blog.user.username%> </h4>

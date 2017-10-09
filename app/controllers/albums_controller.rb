@@ -32,7 +32,7 @@ class AlbumsController < ApplicationController
     else
       flash[:danger] = "Something go wrong"
     end
-    redirect_back(fallback_location: root_path)
+    redirect_to albums_path
   end
 
   # PATCH/PUT /albums/1
@@ -45,6 +45,8 @@ class AlbumsController < ApplicationController
   # DELETE /albums/1.json
   def destroy
     @album.destroy
+    flash[:success] = "Delete done"
+    redirect_back(fallback_location: root_path)
   end
 
   private
@@ -60,9 +62,9 @@ class AlbumsController < ApplicationController
     
     # User only perfome action to own albums
     def require_same_user
-      if current_chef != @album.user and !current_chef.admin?
+      if current_user != @album.user
         flash[:danger] = "You can only edit or delete your own albums"
-        redirect_to recipes_path
+        redirect_to albums_path
       end  
     end
 end

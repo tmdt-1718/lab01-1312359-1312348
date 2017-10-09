@@ -1,17 +1,30 @@
-<%= render 'shared/page_title', title: "All albums by all user" %>
+<%= render 'shared/page_title', title: "All albums by all users" %>
 
 <% if logged_in? %>
+  <div class="row justify-content-md-center">
   <%= link_to "Create an album", new_user_album_path(current_user), class: "btn btn-primary m-2 p-3" %>
+  </div>
   <hr></hr>
 <% end %>
 
 <% @albums.each do |i| %>
   <div class="card m-auto" style="width: 50rem;">
-    <%= image_tag (i.images[0].url if i.images?), class: "card-img-top", alt: "Card image cap" %>
+    <%= link_to user_album_path(i.user, i) do %>
+      <%= image_tag (i.images[0].url if i.images?), class: "card-img-top", alt: "Card image cap" %>
+    <% end %>
     <div class="card-body">
       <%= link_to i.title, user_album_path(i.user, i), class: "card-title" %>
       <p class="card-text"><%= truncate(i.description, length: 50) %></p>
     </div>
+    
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Created by <%= i.user.username %></li>
+      <li class="list-group-item"><%= rand(11).to_s + ' views' %></li>
+    </ul>
+    
+    <% if current_user == i.user %>
+      <%= link_to "Delete this album", user_album_path(current_user, i), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger m-2" %>
+    <% end %>
   </div>
 <% end %>
 
