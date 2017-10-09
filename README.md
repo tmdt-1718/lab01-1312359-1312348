@@ -6,7 +6,7 @@ Thành viên:
 * [x] **1312359** Đào Chí Minh (1312359)
 * [x] **1312348** Lư Hán Luân (1312348)
 
-URL: **https://ec17-lab1.herokuapp.com/**
+URL: **https://ec17-lab1.herokuapp.com/** //Chưa fix được carrierwave uploader to production
 
 ## Yêu cầu
 
@@ -51,6 +51,7 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 Link ảnh GIF demo ứng dụng:
 
 ![Video Walkthrough](demo.gif)
+
 
 Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
